@@ -14,6 +14,9 @@ class Day(val day: Int, var first: () -> Any = { 0 }, var second: () -> Any = { 
 
     val inputLines: Collection<String>
         get() = inputReader.readLines()
+
+    val input: String
+        get() = inputReader.readText()
 }
 
 fun day(day: Int, body: Day.() -> Unit) = Day(day).apply(body)
