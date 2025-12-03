@@ -9,36 +9,12 @@ A repository collecting [Advent of Code 2025](https://adventofcode.com/2025) sol
 Hier ist eine Liste mit allen von Beitragenden verwendeten Programmiersprachen und welche Tage mit diesen gelöst wurden:
 
 Here is a list of all programming languages used by the contributors and the days that were solved with them:
-| Day/Lang                    | ??? | 
-|-----------------------------|--------|
-| 01 - ???     |       |       |
-<!--
-| 02 - Red-Nosed Reports      | ✅      | ✅      | ✅      | ✅      | ✅       | ✅    | ✅    | ✅      | ✅    | ✅ | ✅     | ✅          | ✅    | ✅   | ❌     | ✅  | ❌          |
-| 03 - Mull It Over           | ✅      | ✅      | ✅      | ✅      | ✅       | ✅    | ✅    | ✅      | ✅    | ✅ | ✅     | ✅          | ✅    | ✅   | ✅     | ❌  | ❌          |
-| 04 - Ceres Search           | ✅      | ✅      | ✅      | ✅      | ✅       | ❌    | ✅    | ❌      | ✅    | ✅ | ✅     | ✅          | ❌    | ❌   | ✅     | ❌  | ❌          |
-| 05 - Print Queue            | ✅      | ✅      | ✅      | ✅      | ✅       | ❌    | ✅    | (✅)    | ✅    | ✅ | (✅)   | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 06 - Guard Gallivant        | ✅      | ✅      | ✅      | ✅      | ✅       | ✅    | ✅    | ✅      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 07 - Bridge Repair          | ✅      | ✅      | ✅      | ✅      | ✅       | ❌    | ✅    | ✅      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 08 - Resonant Collinearity  | ✅      | ✅      | ✅      | ✅      | ✅       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 09 - Disk Fragmenter        | ✅      | ✅      | ✅      | ✅      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 10 - Hoof It                | ✅      | ✅      | ❌      | ✅      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 11 - Plutonian Pebbles      | ✅      | ✅      | ❌      | (✅)    | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 12 - Garden Groups          | ✅      | ✅      | ❌      | ❌      | ❌       | ✅    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 13 - Claw Contraption       | ✅      | ✅      | ✅      | ❌      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 14 - Restroom Redoubt       | ✅      | ✅      | ❌      | ❌      | ❌       | ✅    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 15 - Warehouse Woes         | ✅      | ✅      | ✅      | ❌      | ❌       | ✅    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 16 - Reindeer Maze          | ✅      | ✅      | ❌      | ❌      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 17 - Chronospatial Computer | ✅      | ✅      | ❌      | ❌      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 18 - RAM Run                | ✅      | ✅      | ❌      | ❌      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 19 - Linen Layout           | ✅      | ✅      | ❌      | ✅      | ❌       | ❌    | ❌    | ✅      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | (✅)   | ❌  | ❌          |
-| 20 - Race Condition         | ✅      | ✅      | ❌      | ❌      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 21 - Keypad Conundrum       | ✅      | ✅      | ❌      | ❌      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 22 - Monkey Market          | ✅      | ✅      | ✅      | ❌      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 23 - LAN Party.             | ✅      | ✅      | ❌      | ❌      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 24 - Crossed Wires          | (✅)    | ✅      | ❌      | ❌      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| 25 - Code Chronicle         | ✅      | ✅      | ❌      | ❌      | ❌       | ❌    | ❌    | ❌      | ❌    | ❌ | ❌     | ❌          | ❌    | ❌   | ❌     | ❌  | ❌          |
-| **Total** *(Part 1 only)*   | 0 (0) | 25     | 12     | 11 (1) | 8       | 7    | 7    | 6 (1)  | 5    | 5 | 4 (1) | 4          | 3    | 3   | 2 (1) | 2  | 1          |
--->
+
+| Day/Lang             | Java | Python | C | Kotlin | Rust | Clojure | Idris2 |
+|----------------------|------|--------|---|--------|------|---------|--------|
+| 01 - Secret Entrance | ✅    | ✅      | ✅ | ✅      | ✅    | ✅       | ✅      |
+| 02 - Gift Shop       | ✅    | ✅      | ✅ | ❌      | ✅    | ❌       | ❌      |
+
 ❌   = Keine Lösung / No solution,
 ✅   = Voll gelöst / Fully solved,
 (✅) = Erster Teil gelöst / First part solved
