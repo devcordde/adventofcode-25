@@ -1,7 +1,6 @@
 package fyi.pauli.aoc
 
 import java.io.InputStreamReader
-import kotlin.time.Duration
 import kotlin.time.measureTime
 
 class Day(val day: Int, var first: () -> Any = { 0 }, var second: () -> Any = { 0 }) {
@@ -9,13 +8,13 @@ class Day(val day: Int, var first: () -> Any = { 0 }, var second: () -> Any = { 
     operator fun invoke() {
         var firstValue: Any? = null
         val firstTimed = measureTime { firstValue = first() }
-        println("Part 1: $firstValue, took ${firstTimed.inWholeMilliseconds}ms")
+        println("Day $day | Part 1: $firstValue, took ${firstTimed.inWholeMilliseconds}ms")
 
         var secondValue: Any? = null
         val secondTimed = measureTime { secondValue = second() }
-        println("Part 2: $secondValue, took ${secondTimed.inWholeMilliseconds}ms")
+        println("Day $day | Part 2: $secondValue, took ${secondTimed.inWholeMilliseconds}ms")
 
-        println("Together took ${firstTimed.inWholeMilliseconds + secondTimed.inWholeMilliseconds}ms")
+        println("Together took ${firstTimed.inWholeMilliseconds + secondTimed.inWholeMilliseconds}ms \n")
     }
 
     val inputReader: InputStreamReader
