@@ -5,7 +5,7 @@ import tqdm
 from shared.paul2708.input_reader import *
 from shared.paul2708.output import write
 
-lines = read_plain_input(day=5, example=1)
+lines = read_plain_input(day=5, example=None)
 
 fresh_id_ranges = []
 ids = []
@@ -21,8 +21,6 @@ for line in lines:
     else:
         ids.append(int(line))
 
-print(fresh_id_ranges)
-print(ids)
 
 c = 0
 
@@ -32,70 +30,69 @@ for i in ids:
             c += 1
             break
 
-print(c)
 
 clean_id_ranges = []
 clean_id_ranges.append(fresh_id_ranges[0])
 
-def merge(a, b, x, y):
-    for i in range(len(clean_id_ranges)):
-        clean_a, clean_b = clean_id_ranges[i][0], clean_id_ranges[i][1]
 
-        if clean_a <= a <= b <= clean_b:
-            print("Included")
-            break
+def merge(clean_a, clean_b, a, b):
+    if clean_a <= a <= b <= clean_b:
+        return [(clean_a, clean_b)]
 
-        if clean_a <= a <= clean_b <= b:
-            clean_id_ranges[i] = (clean_a, b)
-            print("Right overlap")
-            break
+    if a <= clean_a <= clean_b <= b:
+        return [(a, b)]
 
-        if a <= clean_a <= b <= clean_b:
-            clean_id_ranges[i] = (a, clean_b)
-            print("Left overlap")
-            break
+    if clean_a <= a <= clean_b <= b:
+        return [(clean_a, b)]
 
-        if a <= clean_a <= clean_b <= b:
-            clean_id_ranges[i] = (a, b)
-            print("Both overlap")
-            break
+    if a <= clean_a <= b <= clean_b:
+        return [(a, clean_b)]
 
-        clean_id_ranges.append((a, b))
-        print("New")
+    return [(a, b), (clean_a, clean_b)]
 
 
-for a, b in fresh_id_ranges[1:]:
-    print(a, b)
-    for i in range(len(clean_id_ranges)):
-        clean_a, clean_b = clean_id_ranges[i][0], clean_id_ranges[i][1]
+def merge_list(l):
+    result = set()
+    for i in range(len(l)):
+        for j in range(0, len(l)):
+            merged = merge(l[i][0], l[i][1], l[j][0], l[j][1])
+            merged += merge(l[j][0], l[j][1], l[i][0], l[i][1])
+            merged = set(merged)
 
-        if clean_a <= a <= b <= clean_b:
-            done = True
-            print("Included")
-            break
+            if (l[i][0], l[i][1]) in result:
+                result.remove((l[i][0], l[i][1]))
+            if (l[j][0], l[j][1]) in result:
+                result.remove((l[j][0], l[j][1]))
 
-        if clean_a <= a <= clean_b <= b:
-            clean_id_ranges[i] = (clean_a, b)
-            print("Right overlap")
-            break
+            for m in merged:
+                result.add(m)
 
-        if a <= clean_a <= b <= clean_b:
-            clean_id_ranges[i] = (a, clean_b)
-            print("Left overlap")
-            break
+    return result
 
-        if a <= clean_a <= clean_b <= b:
-            clean_id_ranges[i] = (a, b)
-            print("Both overlap")
-            break
 
-        clean_id_ranges.append((a, b))
-        print("New")
+def merge_til_clean(l):
+    merged = merge_list(l)
+
+    if set(merged) == set(l):
+        return merged
+
+    return merge_til_clean(list(merged))
+
+
+res = merge_til_clean(fresh_id_ranges)
 
 total = 0
 
-for a, b in clean_id_ranges:
+for a, b in res:
     total += b - a + 1
 
 print(total)
-print(clean_id_ranges)
+
+#clean_res = []
+#clean_res.append(fresh_id_ranges[0])
+
+#for i in range(1, len(fresh_id_ranges)):
+#    a = fresh_id_ranges[i]
+
+
+# To high: 1043087815449996
