@@ -1,104 +1,75 @@
-from typing import List
-
-import tqdm
+from typing import List, Optional, Tuple
 
 from shared.paul2708.input_reader import *
 from shared.paul2708.output import write
+from shared.paul2708.utility import copy_list
 
-lines = read_plain_input(day=5, example=None)
+lines = read_plain_input(day=5)
 
+# Parse ranges and IDs
 fresh_id_ranges = []
 ids = []
 
-a = True
-for line in lines:
-    if line == "":
-        a = False
-        continue
-    if a:
-        x = line.split("-")
-        fresh_id_ranges.append((int(x[0]), int(x[1])))
-    else:
-        ids.append(int(line))
+separator = lines.index("")
 
-c = 0
+for i in range(separator):
+    r = lines[i].split("-")
+    fresh_id_ranges.append((int(r[0]), int(r[1])))
 
-for i in ids:
+for i in range(separator + 1, len(lines)):
+    ids.append(int(lines[i]))
+
+# Part 1
+counter = 0
+
+for single_id in ids:
     for a, b in fresh_id_ranges:
-        if a <= i <= b:
-            c += 1
+        if a <= single_id <= b:
+            counter += 1
             break
 
-clean_id_ranges = []
-clean_id_ranges.append(fresh_id_ranges[0])
+write(f"There are <{counter}> fresh ingredients out of the given IDs.")
 
 
-def merge_one(clean_a, clean_b, a, b):
-    if clean_a <= a <= b <= clean_b:
-        return [(clean_a, clean_b)]
+# Part 2
+def merge_two_ranges(first: Tuple[int, int], second: Tuple[int, int]) -> Optional[Tuple[int, int]]:
+    x, y = first
+    a, b = second
 
-    if a <= clean_a <= clean_b <= b:
-        return [(a, b)]
+    if x <= a <= b <= y:
+        return x, y
 
-    if clean_a <= a <= clean_b <= b:
-        return [(clean_a, b)]
+    if a <= x <= y <= b:
+        return a, b
 
-    if a <= clean_a <= b <= clean_b:
-        return [(a, clean_b)]
+    if x <= a <= y <= b:
+        return x, b
 
-    return [(a, b), (clean_a, clean_b)]
+    if a <= x <= b <= y:
+        return a, y
+
+    return None
 
 
-def merge(a, b, x, y):
-    return set(merge_one(a, b, x, y) + merge_one(x, y, a, b))
+def merge_list_of_ranges(ranges: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
+    result = copy_list(ranges)
 
+    for i in range(len(ranges)):
+        for j in range(i + 1, len(ranges)):
+            merged = merge_two_ranges(ranges[i], ranges[j])
 
-def merge_list(l):
-    result = set(l)
+            if merged is not None:
+                result.remove(ranges[i])
+                result.remove(ranges[j])
 
-    for i in range(len(l)):
-        for j in range(i + 1, len(l)):
-            merged = merge(l[i][0], l[i][1], l[j][0], l[j][1])
+                result.append(merged)
 
-            if len(merged) == 1:
-                result.remove((l[i][0], l[i][1]))
-                result.remove((l[j][0], l[j][1]))
-
-                for m in merged:
-                    x = m
-                    result.add(m)
-
-                return result
+                return merge_list_of_ranges(result)
 
     return result
 
 
-def merge_til_clean(l):
-    print(f"Start {l}")
-    merged = merge_list(l)
+merged_ranges = merge_list_of_ranges(fresh_id_ranges)
+accumulated_lengths = sum([b - a + 1 for a, b in merged_ranges])
 
-    print(f"Merged: {merged}")
-
-    if set(merged) == set(l):
-        return merged
-
-    return merge_til_clean(list(merged))
-
-
-res = merge_til_clean(fresh_id_ranges)
-
-print(res)
-
-total = 0
-
-for a, b in res:
-    total += b - a + 1
-
-print(total)
-
-# clean_res = []
-# clean_res.append(fresh_id_ranges[0])
-
-# for i in range(1, len(fresh_id_ranges)):
-#    a = fresh_id_ranges[i]
-
+write(f"There are <{accumulated_lengths}> fresh ingredients in total.")
