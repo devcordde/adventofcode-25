@@ -10,16 +10,19 @@ Hier ist eine Liste mit allen von Beitragenden verwendeten Programmiersprachen u
 
 Here is a list of all programming languages used by the contributors and the days that were solved with them:
 
-| Day/Lang                 | Java | Python | C | Kotlin | Rust | Clojure | Idris2 | Elixir |
-|--------------------------|------|--------|---|--------|------|---------|--------|--------|
-| 01 - Secret Entrance     | ✅    | ✅      | ✅ | ✅      | ✅    | ✅       | ✅      | ✅      |
-| 02 - Gift Shop           | ✅    | ✅      | ✅ | ✅      | ✅    | ✅       | ❌      | ❌      |
-| 03 - Lobby               | ✅    | ✅      | ✅ | ✅      | ✅    | ✅       | ✅      | ❌      |
-| 04 - Printing Department | ✅    | ✅      | ✅ | ✅      | ❌    | ✅       | ❌      | ❌      |
-| 05 - Cafeteria           | ✅    | ✅      | ✅ | ✅      | ❌    | ✅       | ❌      | ❌      |
-| 06 - Trash Compactor     | ✅    | ✅      | ✅ | ✅      | ❌    | ✅       | ❌      | ❌      |
-| 07 - Laboratories        | ✅    | ❌      | ✅ | ✅      | ❌    | ❌       | ❌      | ✅      |
-| 08 - Playground          | ✅    | ❌      | ❌ | ❌      | ❌    | ❌       | ❌      | ❌      |
+| Day/Lang                 | Java | Python | C | Kotlin | Rust | Clojure | Idris2 | Elixir | Ruby |
+|--------------------------|------|--------|---|--------|------|---------|--------|--------|------|
+| 01 - Secret Entrance     | ✅    | ✅      | ✅ | ✅      | ✅    | ✅       | ✅      | ✅      | ✅    |
+| 02 - Gift Shop           | ✅    | ✅      | ✅ | ✅      | ✅    | ✅       | ❌      | ❌      | ❌    |
+| 03 - Lobby               | ✅    | ✅      | ✅ | ✅      | ✅    | ✅       | ✅      | ❌      | ❌    |
+| 04 - Printing Department | ✅    | ✅      | ✅ | ✅      | ❌    | ✅       | ❌      | ❌      | ❌    |
+| 05 - Cafeteria           | ✅    | ✅      | ✅ | ✅      | ❌    | ✅       | ❌      | ❌      | ✅    |
+| 06 - Trash Compactor     | ✅    | ✅      | ✅ | ✅      | ❌    | ✅       | ❌      | ❌      | ❌    |
+| 07 - Laboratories        | ✅    | ❌      | ✅ | ✅      | ❌    | ❌       | ❌      | ✅      | ❌    |
+| 08 - Playground          | ✅    | ❌      | ✅ | ✅      | ❌    | ❌       | ❌      | ✅      | ❌    |
+| 09 - Movie Theater       | ❌    | ❌      | ✅ | ✅      | ❌    | ❌       | ❌      | ❌      | ❌    |
+| 10 - Factory             | ❌    | ❌      | ✅ | ❌      | ❌    | ❌       | ❌      | ❌      | ❌    |
+| 11 - Reactor             | ❌    | ✅      | ❌ | ❌      | ❌    | ❌       | ❌      | ❌      | ❌    |
 
 
 ❌   = Keine Lösung / No solution,
