@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	input, _ := os.ReadFile("Day-02/go/artur/input.txt")
+	input, _ := os.ReadFile("input02.txt")
 	doubleIds := strings.Split(string(input), ",")
 	result := 0
 	for _, idRange := range doubleIds {
